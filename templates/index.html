@@ -1,0 +1,13 @@
+{% extends "default.html" %}
+{% block content %}
+
+<h3>Síðast uppfært {{ 0 | getdate }}</h3>
+{% for i in li %}
+<div class="stod">
+    <a href="/stod/{{i}}"><img class="logo" src="/static/img/{{i}}.png"></a>
+    <h2 class="companynafn"><a href="/stod/{{i}}">{{i}}</a></h2>
+    <p>Lægsta bensínverð: {{ bensinverd[i] | round | int }} krónur á lítra<br>Lægsta díselverð: {{ dieselverd[i] | round | int }} krónur á lítra</p>
+</div>
+{% endfor %}
+
+{% endblock %}

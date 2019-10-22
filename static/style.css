@@ -1,0 +1,29 @@
+* {
+    margin: 0;
+    padding: 0
+}
+
+.content {
+    display: flex;
+    flex-flow: column;
+    align-content: center;
+}
+
+.stod {
+    display: flex;
+    flex-flow: row;
+    align-items: center;
+}
+
+.stod * {
+    padding: 10px;
+}
+
+.companynafn {
+    width: 
+}
+
+.logo {
+    width: 150px;
+    height: auto;
+}
