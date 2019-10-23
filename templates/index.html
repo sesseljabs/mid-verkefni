@@ -1,13 +1,35 @@
 {% extends "default.html" %}
 {% block content %}
-
-<h3>Síðast uppfært {{ 0 | getdate }}</h3>
+<div class="stodvar">
 {% for i in li %}
 <div class="stod">
     <a href="/stod/{{i}}"><img class="logo" src="/static/img/{{i}}.png"></a>
     <h2 class="companynafn"><a href="/stod/{{i}}">{{i}}</a></h2>
-    <p>Lægsta bensínverð: {{ bensinverd[i] | round | int }} krónur á lítra<br>Lægsta díselverð: {{ dieselverd[i] | round | int }} krónur á lítra</p>
 </div>
 {% endfor %}
+</div>
+<table class="bensin">
+    <caption>Lægsta bensínverðið</caption>
+    <tr>
+        <th>Nafn</th>
+        <th>Verð</th>
+    </tr>
+    <tr>
+        <td>{{ verd["bensin"] }}</td>
+        <td>{{ bensinverd[verd["bensin"]] }}</td>
+    </tr>
+</table>
+<table class="diesel">
+    <caption>Lægsta díselverðið</caption>
+    <tr>
+        <th>Nafn</th>
+        <th>Verð</th>
+    </tr>
+    <tr>
+        <td>{{ verd["diesel"] }}</td>
+        <td>{{ bensinverd[verd["diesel"]] }}</td>
+    </tr>
+</table>
+<h3>Síðast uppfært {{ 0 | getdate }}</h3>
 
 {% endblock %}

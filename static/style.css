@@ -27,3 +27,53 @@
     width: 150px;
     height: auto;
 }
+
+
+/* header */
+header {
+    background: #d0d193;
+}
+header h1 {
+    color: #242116;
+    text-align: center;
+    padding: 20px;
+}
+header a {
+    color: #242116;
+    text-decoration: none;
+}
+nav {
+    width: 50%;
+    margin: auto;
+    display: flex;
+    flex-flow: row;
+    justify-content: space-around;
+    padding: 30px;
+    font-size: 20px;
+}
+nav a {
+    text-decoration: none;
+    color: #242116;
+    padding: 5px;
+    border-radius: 2px;
+}
+nav a:hover, a:active {
+    color: #242116b0;
+}
+
+/* content */
+
+.content {
+    width: 60%;
+    margin: auto;
+}
+
+.stodvar {
+    display: flex;
+    flex-flow: row;
+    flex-wrap: wrap;
+}
+.stod {
+}
+
+/* footer */

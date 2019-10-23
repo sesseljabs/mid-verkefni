@@ -63,12 +63,16 @@ for i in fyrirtaeki:
             temp.append(x["diesel"])
     laegstadiesel[i] = min(temp)
 
-print(getdate(0))
+verd = {}
+verd["bensin"] = min(laegstabensin, key=laegstabensin.get)
+verd["diesel"] = min(laegstadiesel, key=laegstadiesel.get)
+print(verd)
+
 app.jinja_env.filters['getdate'] = getdate
 
 @app.route("/")
 def home():
-    return render_template("index.html", li=sorted(fyrirtaeki), bensinverd=laegstabensin, dieselverd=laegstadiesel)
+    return render_template("index.html", li=sorted(fyrirtaeki), bensinverd=laegstabensin, dieselverd=laegstadiesel, verd=verd)
 
 @app.route("/stod/<string:stod>")
 def stod(stod):
@@ -77,6 +81,10 @@ def stod(stod):
         if i["company"] == stod:
             listi.append(i)
     return render_template("stod.html", listi=listi)
+
+@app.errorhandler(404)
+def pagenotfound(error):
+    return render_template("error.html")
 
 if __name__ == "__main__":
     app.run(debug=True, use_reloader=True)
