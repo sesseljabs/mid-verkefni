@@ -1,5 +1,6 @@
 {% extends "default.html" %}
 {% block content %}
+<div class="index">
 <div class="stodvar">
 {% for i in li %}
 <div class="stod">
@@ -8,28 +9,34 @@
 </div>
 {% endfor %}
 </div>
+<div class="prices">
 <table class="bensin">
     <caption>Lægsta bensínverðið</caption>
-    <tr>
-        <th>Nafn</th>
-        <th>Verð</th>
-    </tr>
+    <thead>
+        <tr>
+            <th>Nafn</th>
+            <th>Verð</th>
+        </tr>
+    </thead>
     <tr>
         <td>{{ verd["bensin"] }}</td>
-        <td>{{ bensinverd[verd["bensin"]] }}</td>
+        <td>{{ bensinverd[verd["bensin"]] }} kr</td>
     </tr>
 </table>
 <table class="diesel">
     <caption>Lægsta díselverðið</caption>
-    <tr>
-        <th>Nafn</th>
-        <th>Verð</th>
-    </tr>
+    <thead>
+        <tr>
+            <th>Nafn</th>
+            <th>Verð</th>
+        </tr>
+    </thead>
     <tr>
         <td>{{ verd["diesel"] }}</td>
-        <td>{{ bensinverd[verd["diesel"]] }}</td>
+        <td>{{ dieselverd[verd["diesel"]] }} kr</td>
     </tr>
 </table>
-<h3>Síðast uppfært {{ 0 | getdate }}</h3>
+</div>
+</div>
 
 {% endblock %}

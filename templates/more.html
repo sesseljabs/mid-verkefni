@@ -1,0 +1,7 @@
+{% extends "default.html" %}
+{% block content %}
+<h1>{{ stod['company'] }} - {{stod['name']}}</h1>
+<p>Bensínverð: {{ stod['bensin95'] }} kr á lítrann</p>
+<p>Díselverð: {{ stod['diesel'] }} kr á lítrann</p>
+<a href="https://www.google.com/maps/@{{ stod['geo']['lat'] }},{{ stod['geo']['lon'] }},18z/" target="_blank">Google maps</a>
+{% endblock %}

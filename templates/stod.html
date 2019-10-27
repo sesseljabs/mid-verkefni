@@ -1,6 +1,11 @@
 {% extends "default.html" %}
 {% block content %}
-{% for i in listi%}
-<p>{{ i }}</p>
-{% endfor %}
+<h1 style="text-align: center;">{{ listi[0]['company'] }}</h1>
+<p>Lægsta verð á bensíni:<br>{{ bensin }} krónur á lítrann</p>
+<p>Lægsta verð á díseli:<br>{{ diesel }} krónur á lítrann</p>
+<ul>
+    {% for i in listi%}
+    <li><a href="/moreinfo/{{ i['key'] }}">{{ i['name'] }}</a></li>
+    {% endfor %}
+</ul>
 {% endblock %}

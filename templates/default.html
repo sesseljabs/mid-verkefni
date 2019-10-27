@@ -8,6 +8,7 @@
         <title>Bensín</title>
     </head>
     <body>
+        <div class="page">
         <header>
             <h1><a href="/">Bensín Íslands</a></h1>
             <nav>
@@ -16,9 +17,11 @@
             </nav>
         </header>
         <div class="content">
+            <h3 id="uppfaert">Síðast uppfært {{ 0 | getdate }}</h3>
             {% block content %}
             {% endblock %}
         </div>
+        <footer style="text-align: center;">&copy;2019 Sesselja Bjarney</footer>
+    </div>
     </body>
-    <footer></footer>
 </html>

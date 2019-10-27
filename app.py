@@ -45,7 +45,6 @@ fyrirtaeki = []
 for i in li:
     if i["company"] not in fyrirtaeki:
         fyrirtaeki.append(i["company"])
-print(fyrirtaeki)
 
 laegstabensin = {}
 for i in fyrirtaeki:
@@ -66,7 +65,6 @@ for i in fyrirtaeki:
 verd = {}
 verd["bensin"] = min(laegstabensin, key=laegstabensin.get)
 verd["diesel"] = min(laegstadiesel, key=laegstadiesel.get)
-print(verd)
 
 app.jinja_env.filters['getdate'] = getdate
 
@@ -80,7 +78,21 @@ def stod(stod):
     for i in li:
         if i["company"] == stod:
             listi.append(i)
-    return render_template("stod.html", listi=listi)
+    
+    return render_template("stod.html", listi=listi, bensin = laegstabensin[stod], diesel = laegstadiesel[stod])
+
+@app.route("/moreinfo/<id>")
+def moreinfo(id):
+    dicta = {}
+
+    for i in li:
+        if i['key'] == id:
+            dicta = i
+            break
+    else:
+        return redirect("/404")
+
+    return render_template("more.html", stod=dicta)
 
 @app.errorhandler(404)
 def pagenotfound(error):
