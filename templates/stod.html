@@ -1,11 +1,18 @@
 {% extends "default.html" %}
 {% block content %}
 <h1 style="text-align: center;">{{ listi[0]['company'] }}</h1>
-<p>Lægsta verð á bensíni:<br>{{ bensin }} krónur á lítrann</p>
-<p>Lægsta verð á díseli:<br>{{ diesel }} krónur á lítrann</p>
-<ul>
-    {% for i in listi%}
-    <li><a href="/moreinfo/{{ i['key'] }}">{{ i['name'] }}</a></li>
-    {% endfor %}
-</ul>
+<div class="moreinfo">
+    <div class="moreverd">
+        <p>Lægsta verð á bensíni:</p>
+        <p class="moreverdkr">{{ bensin }} krónur á lítrann</p>
+        <p>Lægsta verð á díseli:</p>
+        <p class="moreverdkr">{{ diesel }} krónur á lítrann</p>
+    </div>
+    <ul class="stodvalisti">
+        {% for i in listi%}
+        <li><a href="/moreinfo/{{ i['key'] }}">{{ i['name'] }}</a></li>
+        {% endfor %}
+    </ul>
+    <button onclick="goBack()">Til baka</button>
+</div>
 {% endblock %}

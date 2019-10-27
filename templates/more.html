@@ -1,7 +1,12 @@
 {% extends "default.html" %}
 {% block content %}
-<h1>{{ stod['company'] }} - {{stod['name']}}</h1>
-<p>Bensínverð: {{ stod['bensin95'] }} kr á lítrann</p>
-<p>Díselverð: {{ stod['diesel'] }} kr á lítrann</p>
-<a href="https://www.google.com/maps/@{{ stod['geo']['lat'] }},{{ stod['geo']['lon'] }},18z/" target="_blank">Google maps</a>
+<h1 style="text-align: center;">{{ stod['company'] }} - {{stod['name']}}</h1>
+<div class="morecontent">
+    <p>Bensínverð: {{ stod['bensin95'] }} kr á lítrann</p>
+    <p>Díselverð: {{ stod['diesel'] }} kr á lítrann</p><br>
+    <p>Staðsetning<br>Breiddargráða: {{ stod['geo']['lat'] }}<br>Lengdargráða: {{ stod['geo']['lon'] }}</p>
+    <br>
+    <a href="https://www.google.com/maps/@{{ stod['geo']['lat'] }},{{ stod['geo']['lon'] }},18z/" target="_blank">Google maps</a>
+    <button onclick="goBack()">Til baka</button>
+</div>
 {% endblock %}

@@ -93,7 +93,8 @@ nav a:hover, a:active {
     flex-flow: column;
     flex-wrap: wrap;
 }
-.stod {
+.stod a {
+    text-decoration: none;
 }
 .prices table {
     width: 100%;
@@ -110,10 +111,59 @@ nav a:hover, a:active {
     font-size: 25px;
 }
 
+.morecontent {
+    width: max-content;
+    margin: auto;
+    margin-top: 20px;
+}
+
+.moreinfo {
+    width: max-content;
+    margin: auto;
+}
+
+.moreverd {
+
+}
+
+.moreverdkr {
+    padding-left: 10px;
+    padding-bottom: 5px;
+    padding-top: 5px;
+}
+
+.stodvalisti {
+    margin-top: 30px;
+    list-style-type: none;
+    text-align: center;
+    font-size: 20px;
+}
+
+.stodvalisti a {
+    text-decoration: none;
+    color: #000274;
+}
+.stodvalisti a:hover {
+    color: #040525;
+}
+button {
+    display: block;
+    width: 100px;
+    height: 30px;
+    margin: auto;
+    margin-top: 20px;
+    margin-bottom: 15px;
+    background: #ffbd87;
+    border: 1px solid #ffaa64;
+    border-radius: 2px;
+}
+button:hover {
+    background: #ffaa64;
+}
 /* footer */
 
 footer {
-    background: #d0d19385;
+    background: #d0d193be;
     position: absolute;
     bottom: 0;
     width: 100%;
